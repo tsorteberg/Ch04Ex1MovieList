@@ -1,6 +1,6 @@
 ﻿<!--
 /***************************************************************
-* Name        : _Layout.cshtml
+* Name        : Delete.cshtml
 * Author      : Tom Sorteberg
 * Created     : 02/06/2021
 * Course      : CIS 174
@@ -14,27 +14,17 @@
 * to my program.
 ***************************************************************/
 -->
-<!DOCTYPE html>
+@model Movie
+@{
+    ViewBag.Title = "Delete Movie";
+}
 
-<html>
+<h2>Confirm Deletion</h2>
+<h3>@Model.Name (@Model.Year)</h3>
 
-<head>
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="MovieId" />
 
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/css/bootstrap.min.css" />
-
-</head>
-
-<body>
-
-    <div class="container">
-        <header class="jumbotron">
-            <h1>My Movies</h1>
-        </header>
-        @RenderBody()
-    </div>
-
-</body>
-
-</html>
+    <button type="submit" class="btn btn-primary">Delete</button>
+    <a asp-controller="Home" asp-action="Index" class="btn btrn-primary">Cancel</a>
+</form>
