@@ -10,7 +10,7 @@ using MovieList.Models;
 namespace MovieList.Migrations
 {
     [DbContext(typeof(MovieContext))]
-    [Migration("20210206060446_Initial")]
+    [Migration("20210207102817_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
